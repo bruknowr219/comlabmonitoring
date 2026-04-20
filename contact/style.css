@@ -285,6 +285,15 @@ body {
   }
 }
 
+@media (max-width: 600px) {
+  .contact-wrapper {
+    padding: 40px 5%;
+  }
+  .contact-form, .contact-info {
+    padding: 20px;
+  }
+}
+
 
 
 .footer {

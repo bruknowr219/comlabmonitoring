@@ -187,6 +187,15 @@ background-image: url(background.png);
   }
 }
 
+@media screen and (max-width: 600px) {
+  .features-container {
+    grid-template-columns: 1fr;
+  }
+  .feature-box {
+    padding: 20px;
+  }
+}
+
 .feature-box {
   background-color: #fff;
   border-radius: 10px;
