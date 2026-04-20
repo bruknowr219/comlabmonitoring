@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Fascinate&family=Oi&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+
+
+
+body{
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  background-image: url("../login-hero-bg.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+
+
+  
+}
+
+.container{
+  background: transparent;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 8px;
+  outline: 2px solid #310853;
+  height: 690px;
+  width:  400px;
+  transition: all 1000ms;
+ backdrop-filter: blur(10px);
+
+}
+
+.container h1{
+  font-size: 50px;
+ 
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-family: "roboto", sans-serif;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+
+
+}
+
+.home{
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+  transition: all 1000ms;
+  border: 2px solid #5a0ed4;
+  background-color: #310853;
+  border-radius: 10px;
+}
+
+.home:hover{
+  background-color: #5a0ed4;
+  border: 2px solid #310853;
+  color: white;
+  transform: scale(1.1);
+}
+
+
+.container img{
+  width: 110px;
+  height: 110px;
+  justify-content: center;;
+  position: absolute;
+  top: 50px;
+  text-align: center;
+  border: 5px solid #af2ca8;
+  border-radius: 100px;
+  border-style: double;
+}
+
+.details {
+  position: absolute;
+  text-align: center;
+  bottom: 100px;
+}
+
+.form{
+  background: transparent;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  height: 690px;
+  width:  400px;
+  outline: 2px solid #592d8152;
+  backdrop-filter: blur(10px);
+  
+}
+
+.form h1{
+  margin-bottom: 20px;
+  color: white;
+  text-align: center;
+}
+
+.form label{
+  display: block;
+  margin-bottom: 5px;
+      color: white;
+  font-weight: bold;
+  font-size: 14px;
+ 
+}
+
+.form input{
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: 2px solid #f38be5;
+  background: transparent;
+  color: white;
+}
+
+
+
+.information{
+  justify-content: space-between;
+  align-items: center;
+}
+
+.information p{
+  margin-top: 10px;
+  font-size: 14px;
+  color: white;
+  height: 10px;
+}
+
+
+.bubbles {
+  --c1: #212121;   --c2: #8685ef;
+  --size-letter: 20px;
+  padding: 0.5em 1em;
+  font-size: var(--size-letter);
+
+  background-color: transparent;
+  border: calc(var(--size-letter) / 6) solid var(--c2);
+  border-radius: 0.2em;
+  cursor: pointer;
+
+  overflow: hidden;
+  position: relative;
+  transition: 300ms cubic-bezier(0.83, 0, 0.17, 1);
+}
+
+.bubbles > .text {
+  font-weight: 700;
+  color: var(--c2);
+  position: relative;
+  z-index: 1;
+  transition: color 700ms cubic-bezier(0.83, 0, 0.17, 1);
+}
+
+.bubbles::before {
+  top: 0;
+  left: 0;
+}
+
+.bubbles::after {
+  top: 100%;
+  left: 100%;
+}
+
+.bubbles::before,
+.bubbles::after {
+  content: "";
+  width: 150%;
+  aspect-ratio: 1/1;
+  scale: 0;
+  transition: 1000ms cubic-bezier(0.76, 0, 0.24, 1);
+
+  background-color: var(--c2);
+  border-radius: 50%;
+
+  position: absolute;
+  translate: -50% -50%;
+}
+
+.bubbles:hover {
+  & > span {
+    color: var(--c1);
+  }
+  &::before,
+  &::after {
+    scale: 1;
+  }
+}
+
+.bubbles:active {
+  scale: 0.98;
+  filter: brightness(0.9);
+}
+
+
+
+
+
+
+
+
+
+.footer{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: transparent;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 14px;
+}

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comlab Monitoring Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+ <link rel="icon" href="../../../account/dashboard/computerlab.png" />
+
+</head>
+<body>
+  <button class="mobile-menu-btn" id="mobile-menu-btn">
+    <i class="bi bi-list"></i>
+  </button>
+  <div class="overlay" id="overlay"></div>
+  <div class="dashboard">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-top">
+        <div class="brand-circle"></div>
+        <div class="toggle-buttons">
+          <i class="bi bi-arrow-bar-left" id="collapse-btn"></i>
+          <i class="bi bi-arrow-bar-right" id="expand-btn" style="display: none;"></i>
+        </div>
+        <div class="brand-title">COMLAB MONITORING</div>
+      </div>
+      <nav class="nav-links">
+        <a href="../../../account/dashboard/dashboard.html" class="nav-item "> <i class="bi bi-house "></i> <span>Home</span></a>
+        <a href="computer.html" class="nav-item"> <i class="bi bi-pc-display-horizontal"></i> <span><u>Computers</u></span></a>
+        <a href="../../../account/dashboard/reports/reports.html" class="nav-item"> <i class="bi bi-flag"></i> <span>Reports</span></a>
+        <a href="../../dashboard/users/users.html" class="nav-item"> <i class="bi bi-person"></i> <span>Users</span></a>
+        <a href="../../dashboard/settings/settings.html" class="nav-item"> <i class="bi bi-gear"></i> <span>Settings</span></a>
+      </nav>
+      <button class="logout-button"> <i class="bi bi-box-arrow-left"></i> <span>LOG OUT</span></button>
+    </aside>
+
+    <main class="main-panel">
+      <header class="top-bar">
+        <div></div>
+        <div class="top-bar-info">
+          <div class="top-bar-date">April 15 2026</div>
+          <div class="top-bar-time">10:07:56 AM</div>
+        </div>
+      </header>
+
+      <section class="computers-section">
+        <div class="section-header">
+          <h2>Computer Management</h2>
+          <div class="quick-actions">
+            <button class="quick-action-btn restart-all" title="Restart all computers">
+              <i class="bi bi-arrow-clockwise"></i> Restart All
+            </button>
+            <button class="quick-action-btn power-on-all" title="Power on all computers">
+              <i class="bi bi-lightning-charge-fill"></i> Power On All
+            </button>
+            <button class="quick-action-btn power-off-all" title="Power off all computers">
+              <i class="bi bi-power"></i> Power Off All
+            </button>
+          </div>
+        </div>
+        <div class="computers-grid" id="computersGrid">
+         
+        </div>
+      </section>
+
+    
+      <div class="modal" id="actionModal">
+        <div class="modal-content">
+          <span class="modal-close">&times;</span>
+          <h3 id="modalTitle">Confirm Action</h3>
+          <p id="modalMessage"></p>
+          <div class="modal-buttons">
+            <button class="btn-cancel">Cancel</button>
+            <button class="btn-confirm">Confirm</button>
+          </div>
+        </div>
+      </div>
+     </main>
+  </div>
+
+
+
+
+  
+
+  <script>
+    function updateDateTime() {
+      const now = new Date();
+      
+      const options = { year: 'numeric', month: 'long', day: 'numeric' };
+      const dateStr = now.toLocaleDateString('en-US', options);
+      
+      const timeStr = now.toLocaleTimeString('en-US', { 
+        hour: '2-digit', 
+        minute: '2-digit', 
+        second: '2-digit',
+        hour12: true 
+      });
+      
+      document.querySelector('.top-bar-date').textContent = dateStr;
+      document.querySelector('.top-bar-time').textContent = timeStr;
+    }
+    
+    function animateCountUp() {
+      const statCards = document.querySelectorAll('.stat-value');
+      
+      statCards.forEach(card => {
+        const target = parseInt(card.getAttribute('data-target'));
+        const duration = 1500; 
+        const increment = target / (duration / 30); 
+        let current = 0;
+        
+        const timer = setInterval(() => {
+          current += increment;
+          
+          if (current >= target) {
+            card.textContent = target;
+            clearInterval(timer);
+          } else {
+            card.textContent = Math.floor(current);
+          }
+        }, 30);
+      });
+    }
+    
+    updateDateTime();
+    setInterval(updateDateTime, 1000);
+    
+
+    window.addEventListener('load', animateCountUp);
+  </script>
+
+  <script src="script.js"></script>
+
+
+    <footer class="footer">
+        <p>&copy; 2026 Comlab Monitor. All rights reserved.</p>
+</body>
+</html>

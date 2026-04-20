@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> ABOUT |Comlab Monitor</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="shortcut icon" href="../pictures/computerlab.png"></link>
+
+</head>
+
+<body>
+    <div class="topnav">
+        <div class="headerlogo">
+            <img src="../pictures/computerlab.png" alt="Computerlab Logo" width="56" />
+            <h1>Comlab Monitor</h1>
+        </div>
+        <div class="burger-menu" id="burger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul id="nav-links" class="nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../features/features.html">Features</a></li>
+            <li ><a href="about.html" ><b><u>About</u></b></a></li>
+            <li><a href="../contact/contact.html">Contact</a></li>
+            <li><a href="../account/signin.html"><button>Log-in</button></a></li>
+        </ul>
+
+    </div>
+
+   <section class="about-section">
+    <div class="about-header">
+      <h1 class="animate__animated animate__bounce" >About Us</h1>
+      <p>Empowering computer laboratories through smart monitoring and management.</p>
+
+      
+    </div>
+
+    <div class="about-container">
+      <div class="about-box left">
+        <div class="about-text">
+          <h2>Centralized Control and Visibility</h2>
+          <p>Managing multiple computers manually is difficult and time-consuming. Our system solves this by giving full control and visibility in one place — allowing administrators to monitor usage, performance, and security effortlessly.</p>
+          <a href="../about/see how it works/howitworks.html" class="btn  ">See How It Works</a>
+        </div>
+        <div class="about-image ">
+          <img src="dashboard.png" alt="Dashboard overview">
+        </div>
+      </div>
+
+      <div class="about-box right">
+        <div class="about-image">
+          <img src="teamwork.png" alt="Team collaboration">
+        </div>
+        <div class="about-text">
+          <h2>Efficiency Meets Innovation</h2>
+          <p>ComLab Monitoring System automates routine tasks, tracks real-time activity, and ensures every workstation runs smoothly — helping institutions save time and focus on learning.</p>
+          <a href="../about/learn more/learn.html" class="btn">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+
+
+
+    <footer class="footer">
+        <p>&copy; 2026 Comlab Monitor. All rights reserved.</p>
+        
+    </footer>
+
+    <script>
+        document.getElementById('burger-menu').addEventListener('click', function() {
+            var nav = document.getElementById('nav-links');
+            var burger = document.getElementById('burger-menu');
+            nav.classList.toggle('active');
+            burger.classList.toggle('active');
+        });
+    </script>
+</body>
+
+</html>

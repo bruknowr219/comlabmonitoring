@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FEAUTURES |Comlab Monitor</title>
+    <link rel="stylesheet" href="style.css">
+   <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link rel="shortcut icon" href="../pictures/computerlab.png"></link>
+
+
+</head>
+
+<body>
+    <div class="topnav">
+        <div class="headerlogo">
+            <img src="../pictures/computerlab.png" alt="Computerlab Logo" width="56" />
+            <h1>Comlab Monitor</h1>
+        </div>
+        <div class="burger-menu" id="burger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul id="nav-links" class="nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../features/features.html"><b><u>Features</u></b></a></li>
+            <li ><a href="../about/about.html">About</a></li>
+            <li><a href="../contact/contact.html">Contact</a></li>
+            <li><a href="../account/signin.html"><button>Log-in</button></a></li>
+        </ul>
+
+    </div>
+  <section class="features-section">
+    <div class="features-header">
+      <h1 class="animate__animated animate__bounce" >Our Amazing Features</h1>
+      <p>ComLab Monitoring System empowers administrators with smart tools for efficient computer lab management.</p>
+    </div>
+
+    <div class="features-container ">
+      <div class="feature-box">
+        <img src="monitoring.png" alt="Real-time Monitoring">
+        <h3>Real-time Monitoring</h3>
+        <p>Track computer usage, performance, and user activity instantly through a centralized dashboard.</p>
+      </div>
+
+      <div class="feature-box">
+        <img src="security.png" alt="Centralized Security">
+        <h3>Centralized Security</h3>
+        <p>Protect your network with automated alerts and system health checks to ensure data safety.</p>
+      </div>
+
+      <div class="feature-box">
+        <img src="control.png" alt="Remote Control">
+        <h3>Remote Control</h3>
+        <p>Manage and troubleshoot computers remotely, saving time and improving efficiency.</p>
+      </div>
+
+      <div class="feature-box">
+        <img src="report.png" alt="Detailed Reports">
+        <h3>Detailed Reports</h3>
+        <p>Generate comprehensive reports on lab activity, system performance, and user statistics.</p>
+      </div>
+
+      <div class="feature-box">
+        <img src="user.png" alt="User Management">
+        <h3>User Management</h3>
+        <p>Assign roles, manage permissions, and monitor user sessions with ease.</p>
+      </div>
+
+      <div class="feature-box">
+        <img src="automation.png" alt="Automation Tools">
+        <h3>Automation Tools</h3>
+        <p>Automate repetitive tasks like system updates and maintenance schedules.</p>
+      </div>
+    </div>
+
+    <div class="features-footer">
+      <h2>Start managing smarter today</h2>
+      <p>Experience the power of ComLab Monitoring System and simplify your IT operations.</p>
+      <a href="../account/signup/signup.html" class="btn">Get Started</a>
+    </div>
+  </section>
+
+    <footer class="footer">
+        <p>&copy; 2026 Comlab Monitor. All rights reserved.</p>
+
+    </footer>
+
+    <script>
+        document.getElementById('burger-menu').addEventListener('click', function() {
+            var nav = document.getElementById('nav-links');
+            var burger = document.getElementById('burger-menu');
+            nav.classList.toggle('active');
+            burger.classList.toggle('active');
+        });
+    </script>
+</body>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comlab Monitor</title>
+    <link rel="stylesheet" href="style.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link rel="shortcut icon" href="pictures/computerlab.png"></link>
+
+
+</head>
+
+<body>
+    <div class="topnav">
+        <div class="headerlogo">
+            <img src="pictures/computerlab.png" alt="Computerlab Logo" width="56" />
+            <h1>Comlab Monitor</h1>
+        </div>
+        <div class="burger-menu" id="burger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul id="nav-links" class="nav-links">
+           
+            <a  href="index.html"> <li> Home</li> </a> 
+            <a href="features/features.html"> <li> Features</li> </a>
+            <a href="about/about.html"> <li> About</li> </a>
+            <a href="contact/contact.html"> <li> Contact</li> </a>
+            <a href="account/signin.html"><button> Log-in </button></a> 
+         
+        </ul>
+
+    </div>
+ <div class="main-hero  animate__animated animate__heartBeat">
+  <div class="hero-grid">
+    <div class="hero-left">
+      <div class="hero-panel">
+        <div class="hero-copy">
+          <h2>Monitor Your Computer Lab in Real-Time</h2>
+          <p>Manage computers, track usage, and control systems easily from a single dashboard. Keep your lab running efficiently with live insights and one-click administration.</p>
+          <div class="cta-group">
+            <a href="account/signup/signup.html" class="button">
+              <span class="button_lg">
+                <span class="button_sl"></span>
+                <span class="button_text">Get Started</span>
+              </span>
+            </a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img src="pictures/system monitor.png" alt="Computer Lab Monitor" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <footer class="footer">
+        <p>&copy; 2026 Comlab Monitor. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('burger-menu').addEventListener('click', function() {
+            var nav = document.getElementById('nav-links');
+            var burger = document.getElementById('burger-menu');
+            nav.classList.toggle('active');
+            burger.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
