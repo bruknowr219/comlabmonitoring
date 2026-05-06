@@ -116,6 +116,64 @@
   </div>
 
   <script>
+    function getComputersData() {
+      const stored = localStorage.getItem('computersData');
+      const defaultData = [
+        { id: 1, name: 'PC-01', assignedUser: 'John Doe', remainingTime: 8, cpuUsage: 35, ramUsage: 48, isOnline: true, ipAddress: '192.168.1.10', macAddress: '00:1A:2B:3C:4D:5E', os: 'Windows 10', lastLogin: '2026-04-16 09:30', storageUsage: 65 },
+        { id: 2, name: 'PC-02', assignedUser: 'Jane Smith', remainingTime: 6, cpuUsage: 62, ramUsage: 71, isOnline: true, ipAddress: '192.168.1.11', macAddress: '00:1A:2B:3C:4D:5F', os: 'Windows 11', lastLogin: '2026-04-16 08:45', storageUsage: 72 },
+        { id: 3, name: 'PC-03', assignedUser: 'Mike Johnson', remainingTime: 3, cpuUsage: 45, ramUsage: 55, isOnline: true, ipAddress: '192.168.1.12', macAddress: '00:1A:2B:3C:4D:60', os: 'Windows 10', lastLogin: '2026-04-16 07:20', storageUsage: 58 },
+        { id: 4, name: 'PC-04', assignedUser: 'Sarah Williams', remainingTime: 5, cpuUsage: 28, ramUsage: 42, isOnline: true, ipAddress: '192.168.1.13', macAddress: '00:1A:2B:3C:4D:61', os: 'Windows 11', lastLogin: '2026-04-16 09:15', storageUsage: 48 },
+        { id: 5, name: 'PC-05', assignedUser: 'David Brown', remainingTime: 0, cpuUsage: 0, ramUsage: 0, isOnline: false, ipAddress: '192.168.1.14', macAddress: '00:1A:2B:3C:4D:62', os: 'Windows 10', lastLogin: '2026-04-15 16:30', storageUsage: 55 },
+        { id: 6, name: 'PC-06', assignedUser: 'Emma Davis', remainingTime: 7, cpuUsage: 71, ramUsage: 85, isOnline: true, ipAddress: '192.168.1.15', macAddress: '00:1A:2B:3C:4D:63', os: 'Windows 11', lastLogin: '2026-04-16 10:05', storageUsage: 81 },
+        { id: 7, name: 'PC-07', assignedUser: 'Robert Wilson', remainingTime: 4, cpuUsage: 52, ramUsage: 64, isOnline: true, ipAddress: '192.168.1.16', macAddress: '00:1A:2B:3C:4D:64', os: 'Windows 10', lastLogin: '2026-04-16 08:20', storageUsage: 62 },
+        { id: 8, name: 'PC-08', assignedUser: 'Lisa Anderson', remainingTime: 8, cpuUsage: 38, ramUsage: 51, isOnline: true, ipAddress: '192.168.1.17', macAddress: '00:1A:2B:3C:4D:65', os: 'Windows 11', lastLogin: '2026-04-16 09:00', storageUsage: 69 },
+        { id: 9, name: 'PC-09', assignedUser: 'James Taylor', remainingTime: 2, cpuUsage: 78, ramUsage: 82, isOnline: true, ipAddress: '192.168.1.18', macAddress: '00:1A:2B:3C:4D:66', os: 'Windows 10', lastLogin: '2026-04-16 10:30', storageUsage: 85 },
+        { id: 10, name: 'PC-10', assignedUser: 'Maria Garcia', remainingTime: 6, cpuUsage: 41, ramUsage: 58, isOnline: true, ipAddress: '192.168.1.19', macAddress: '00:1A:2B:3C:4D:67', os: 'Windows 11', lastLogin: '2026-04-16 07:50', storageUsage: 71 },
+        { id: 11, name: 'PC-11', assignedUser: 'Charles Martinez', remainingTime: 5, cpuUsage: 65, ramUsage: 73, isOnline: true, ipAddress: '192.168.1.20', macAddress: '00:1A:2B:3C:4D:68', os: 'Windows 10', lastLogin: '2026-04-16 08:35', storageUsage: 76 },
+        { id: 12, name: 'PC-12', assignedUser: 'Patricia Lee', remainingTime: 0, cpuUsage: 0, ramUsage: 0, isOnline: false, ipAddress: '192.168.1.21', macAddress: '00:1A:2B:3C:4D:69', os: 'Windows 11', lastLogin: '2026-04-15 15:45', storageUsage: 52 },
+        { id: 13, name: 'PC-13', assignedUser: 'Michael White', remainingTime: 7, cpuUsage: 33, ramUsage: 47, isOnline: true, ipAddress: '192.168.1.22', macAddress: '00:1A:2B:3C:4D:6A', os: 'Windows 10', lastLogin: '2026-04-16 09:45', storageUsage: 66 },
+        { id: 14, name: 'PC-14', assignedUser: 'Jennifer Harris', remainingTime: 3, cpuUsage: 56, ramUsage: 68, isOnline: true, ipAddress: '192.168.1.23', macAddress: '00:1A:2B:3C:4D:6B', os: 'Windows 11', lastLogin: '2026-04-16 08:10', storageUsage: 73 },
+        { id: 15, name: 'PC-15', assignedUser: 'Daniel Martin', remainingTime: 8, cpuUsage: 42, ramUsage: 53, isOnline: true, ipAddress: '192.168.1.24', macAddress: '00:1A:2B:3C:4D:6C', os: 'Windows 10', lastLogin: '2026-04-16 10:15', storageUsage: 59 },
+        { id: 16, name: 'PC-16', assignedUser: 'Nancy Clark', remainingTime: 4, cpuUsage: 67, ramUsage: 79, isOnline: true, ipAddress: '192.168.1.25', macAddress: '00:1A:2B:3C:4D:6D', os: 'Windows 11', lastLogin: '2026-04-16 07:30', storageUsage: 82 },
+        { id: 17, name: 'PC-17', assignedUser: 'Christopher Rodriguez', remainingTime: 6, cpuUsage: 39, ramUsage: 49, isOnline: true, ipAddress: '192.168.1.26', macAddress: '00:1A:2B:3C:4D:6E', os: 'Windows 10', lastLogin: '2026-04-16 09:20', storageUsage: 61 },
+        { id: 18, name: 'PC-18', assignedUser: 'Linda Lewis', remainingTime: 5, cpuUsage: 71, ramUsage: 84, isOnline: true, ipAddress: '192.168.1.27', macAddress: '00:1A:2B:3C:4D:6F', os: 'Windows 11', lastLogin: '2026-04-16 08:55', storageUsage: 79 },
+        { id: 19, name: 'PC-19', assignedUser: 'Mark Walker', remainingTime: 0, cpuUsage: 0, ramUsage: 0, isOnline: false, ipAddress: '192.168.1.28', macAddress: '00:1A:2B:3C:4D:70', os: 'Windows 10', lastLogin: '2026-04-15 14:20', storageUsage: 54 },
+        { id: 20, name: 'PC-20', assignedUser: 'Barbara Hall', remainingTime: 7, cpuUsage: 45, ramUsage: 62, isOnline: true, ipAddress: '192.168.1.29', macAddress: '00:1A:2B:3C:4D:71', os: 'Windows 11', lastLogin: '2026-04-16 10:00', storageUsage: 68 },
+        { id: 21, name: 'PC-21', assignedUser: 'Steven Allen', remainingTime: 8, cpuUsage: 54, ramUsage: 66, isOnline: true, ipAddress: '192.168.1.30', macAddress: '00:1A:2B:3C:4D:72', os: 'Windows 10', lastLogin: '2026-04-16 08:25', storageUsage: 70 },
+        { id: 22, name: 'PC-22', assignedUser: 'Karen Young', remainingTime: 3, cpuUsage: 59, ramUsage: 75, isOnline: true, ipAddress: '192.168.1.31', macAddress: '00:1A:2B:3C:4D:73', os: 'Windows 11', lastLogin: '2026-04-16 09:35', storageUsage: 74 },
+        { id: 23, name: 'PC-23', assignedUser: 'Andrew King', remainingTime: 6, cpuUsage: 36, ramUsage: 44, isOnline: true, ipAddress: '192.168.1.32', macAddress: '00:1A:2B:3C:4D:74', os: 'Windows 10', lastLogin: '2026-04-16 07:40', storageUsage: 57 },
+        { id: 24, name: 'PC-24', assignedUser: 'Jessica Wright', remainingTime: 4, cpuUsage: 68, ramUsage: 81, isOnline: true, ipAddress: '192.168.1.33', macAddress: '00:1A:2B:3C:4D:75', os: 'Windows 11', lastLogin: '2026-04-16 10:10', storageUsage: 83 },
+        { id: 25, name: 'PC-25', assignedUser: 'Paul Scott', remainingTime: 5, cpuUsage: 48, ramUsage: 59, isOnline: true, ipAddress: '192.168.1.34', macAddress: '00:1A:2B:3C:4D:76', os: 'Windows 10', lastLogin: '2026-04-16 08:40', storageUsage: 64 },
+      ];
+      
+      if (stored) {
+        try {
+          const parsedData = JSON.parse(stored);
+          if (parsedData.length === 25) {
+            return parsedData;
+          }
+        } catch (e) {
+          console.log('localStorage data corrupted, using default');
+        }
+      }
+      
+      return defaultData;
+    }
+
+    function updateStats() {
+      const computersData = getComputersData();
+      const total = computersData.length;
+      const active = computersData.filter(c => c.isOnline).length;
+      const offline = total - active;
+      const issues = computersData.filter(c => c.remainingTime === 0 || c.cpuUsage > 80 || c.ramUsage > 80).length;
+      
+      const statCards = document.querySelectorAll('.stat-card .stat-value');
+      statCards[0].setAttribute('data-target', total); // Total PC's
+      statCards[1].setAttribute('data-target', active); // Active
+      statCards[2].setAttribute('data-target', offline); // Offline
+      statCards[3].setAttribute('data-target', issues); // Issues
+    }
+
     function updateDateTime() {
       const now = new Date();
       
@@ -158,8 +216,12 @@
     updateDateTime();
     setInterval(updateDateTime, 1000);
     
-
+    updateStats();
     window.addEventListener('load', animateCountUp);
+    window.addEventListener('focus', () => {
+      updateStats();
+      animateCountUp();
+    });
   </script>
 
   <script src="script.js"></script>
